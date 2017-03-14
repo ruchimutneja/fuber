@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lattitude</th>
+      <th>Longitude</th>
+      <th>Color</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cabs.each do |cab| %>
+      <tr>
+        <td><%= link_to 'Show', cab %></td>
+        <td><%= link_to 'Edit', edit_cab_path(cab) %></td>
+        <td><%= link_to 'Destroy', cab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cab', new_cab_path %>

@@ -1,0 +1,29 @@
+<%= form_for(cab) do |f| %>
+  <% if cab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cab.errors.count, "error") %> prohibited this cab from being saved:</h2>
+
+      <ul>
+      <% cab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :latitude %> <br>
+    <%= text_field_tag :latitude %> <br>
+
+    <%= f.label :longitude %> <br>
+    <%= text_field_tag :longitude %> <br>
+
+    <%= f.label :color %> <br>
+    <%= f.text_field :color %> <br>
+
+    <%= f.label :available %> <br>
+    <%= f.select :desired_attribute, [true, false]%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
